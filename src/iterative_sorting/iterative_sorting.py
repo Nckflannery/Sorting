@@ -53,8 +53,8 @@ def count_sort( arr ):
             return 'Error, negative numbers not allowed in Count Sort'
     # First, find largest element
     largest = max(arr)
-    # Create array of 0's that is largest + 1 in size
-    output = [0] * (largest+1)
+    # Create array of 0's that is same size as original array
+    output = [0] * len(arr)
     # Create array for counts of each element in arr
     counter = [0] * (largest+1)
     # Count number of times each element appears
@@ -72,7 +72,4 @@ def count_sort( arr ):
       counter[arr[i]] -= 1
       # 1 item down, reduce i by 1
       i -= 1
-    # Now output has sorted list but also has 0's from 
-    # numbers that were not used so....
-    output = [output[i] for i in range(len(arr))]
     return output
